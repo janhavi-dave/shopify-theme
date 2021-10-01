@@ -1,1 +1,1 @@
-# hello Shopify theme
+# Shopify theme

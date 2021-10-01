@@ -570,6 +570,12 @@
       },
       {
         "type": "color",
+        "id": "notification_name_color",
+        "label": "Notification Name Color",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
         "id": "topbar_color_1",
         "label": "BG Grdian Color One",
         "default": "#f3f3f3"

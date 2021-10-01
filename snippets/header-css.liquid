@@ -33,6 +33,7 @@
 
 {{ 'theme-responsive.css' | asset_url | stylesheet_tag }}
 {{ 'skin-and-color.css' | asset_url | stylesheet_tag }}
+{{ 'custom.css' | asset_url | stylesheet_tag }}
 
 {%- if settings.custom_css != '' -%}
 {{ settings.custom_css }}

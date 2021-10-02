@@ -4,4 +4,4 @@ const sass= require('gulp-sass');
 
 gulp.task('sass',function(){
     return gulp.src('scss/global.scss')
-})
+})   

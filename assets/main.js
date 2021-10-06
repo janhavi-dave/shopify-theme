@@ -256,7 +256,7 @@
         dots: false,
         responsive: {
             0: {
-                items: 3,
+                items: 4,
                 autoplay: true,
                 smartSpeed: 300
             },

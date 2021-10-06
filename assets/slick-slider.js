@@ -2,7 +2,7 @@
  Slick Slider
  Version: 1.8.1
   Author: Ken Wheeler
- Website: http://kenwheeler.github.io
+ Website: http://kenwheeler.github.io   
     Docs: http://kenwheeler.github.io/slick
     Repo: http://github.com/kenwheeler/slick
   Issues: http://github.com/kenwheeler/slick/issues

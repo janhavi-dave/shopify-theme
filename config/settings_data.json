@@ -2266,8 +2266,8 @@
         ],
         "settings": {
           "section_width": "default",
-          "tab_arsoule_arrow_enable": true,
-          "product_casoule_row": 4
+          "tab_arsoule_arrow_enable": false,
+          "product_casoule_row": 3
         }
       },
       "1574931492712": {

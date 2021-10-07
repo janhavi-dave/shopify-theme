@@ -12,11 +12,21 @@
         </li>
         <li><a href="mailto:demo@example.com">demo@example.com</a>
         </li>
+        <li><div class="setting-wrap">
+          <button class="setting-active">
+            <i class="sli sli-settings"></i>
+          </button>
+          {%- include 'currency-usermenu' -%}
+        </div></li>
       </ul>
-      <div class="setting-wrap">
-        {{ settings.notification_name }}
+      <!-- {%- if section.settings.currency_enable or section.settings.show_user_menu -%} -->
+      <!-- <div class="setting-wrap">
+        <button class="setting-active">
+          <i class="sli sli-settings"></i>
+        </button>
         {%- include 'currency-usermenu' -%}
-      </div>
+      </div> -->
+      <!-- {%- endif -%} -->
       </div>
     </div>
   </div>

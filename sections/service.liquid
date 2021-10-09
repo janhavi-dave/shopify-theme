@@ -43,7 +43,6 @@
         
         {% elsif section.settings.service_style == 'style_two' %}
         
-        <div class="single-feature style_two mb-40" style="background: {{ block.settings.service_bg_color }} {%- if block.settings.service_bg_img -%} url({{ block.settings.service_bg_img | img_url: 'master' }}) no-repeat scroll center center / cover;{%- endif -%} ">
 
           {%- if bset.show_service_img -%}
           
@@ -56,7 +55,7 @@
             <img src="{{ bset.service_img | img_url: 'small' }}" alt="{{ image.alt }}">
             
             {%- else -%}
-            <img src="https://via.placeholder.com/100x100" alt="{{ image.alt }}">
+            <img src="https://via.placeholder.com/268x307" alt="{{ image.alt }}">
             {%- endif -%}
             
           </div>

@@ -19,7 +19,7 @@
         <li class="sub-menu mega-menu-img">
           <a href="{{ childlink.url }}"><img src="{{ childlink.object.image | img_url: 'master' }}" alt="{{ childlink.object.image.alt }}" /></a>
         </li>
-        {% else %}
+        {% else %}   
         <li class="sub-menu-li"><a href="{{ childlink.url }}">{{ childlink.title }}</a></li>
         {% endif %}  
         {% endfor %}

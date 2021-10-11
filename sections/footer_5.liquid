@@ -6,7 +6,7 @@
       <div class="row">
         {%- for block in section.blocks -%}{%- case block.type -%}
         
-        {%- when 'service' -%}
+      {%- when 'service' -%}
       {%- assign bset = block.settings -%}
       <div class="col-lg-{{ sset.service_col }} col-md-6">
         
@@ -59,6 +59,14 @@
         {% endif %}
         
       </div>
+      {% assign image_blocks = section.blocks | where: 'type', 'image' %}
+      {% for block in image_blocks %}
+      {% endfor %}
+
+      {% assign button_blocks = section.blocks | where: 'type', 'button' %}
+      {% for block in button_blocks %}
+            
+      {% endfor %}
         {% when 'about_info' %}
         <div class="col-lg-{{ block.settings.widget_col }} col-md-{{ block.settings.widget_col_md }} col-sm-12 col-12">
           <div class="footer-widget mb-40">

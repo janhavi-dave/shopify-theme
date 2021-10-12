@@ -8,7 +8,7 @@
         
       {%- when 'service' -%}
       {%- assign bset = block.settings -%}
-      <div class="col-lg-{{ sset.service_col }} col-md-6">
+      <div class="col-lg-{{ sset.service_col }} col-md-3">
         
         {% if section.settings.service_style == 'style_one' %}
         
@@ -288,6 +288,7 @@
 			"label": "Show Footer Top",
 			"default": true
 		},
+    
               {
                 "type": "select",
                 "id": "section_width",
@@ -308,6 +309,22 @@
                   ],
                   "default": "default"
               },
+              {
+			"type": "select",
+			"id": "service_style",
+			"label": "Select Service Style",
+			"options": [
+				{
+					"label": "Style One",
+					"value": "style_one"
+				},
+				{
+					"label": "Style Two",
+					"value": "style_two"
+				}
+			],
+			"default": "style_one"
+		},
         {
           "type": "checkbox",
           "id": "custom_footer_style",
@@ -352,6 +369,7 @@
           "default": "16",
           "info": "Footer Content Font Size"
         }
+        
 
 	],
     "blocks": [

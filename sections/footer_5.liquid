@@ -8,7 +8,7 @@
         
       {%- when 'service' -%}
       {%- assign bset = block.settings -%}
-      <div class="col-lg-{{ sset.service_col }} col-md-3">
+      <div class="col-lg-{{ sset.service_col }} col-md-4">
         
         {% if section.settings.service_style == 'style_one' %}
         
@@ -115,7 +115,59 @@
             
           </div>
         </div>
-        
+        {%- when 'newsletter' -%}
+        <div class="col-lg-{{ block.settings.widget_col }} col-md-{{ block.settings.widget_col }} col-sm-12 col-12 custom_class_2">
+          {%- if block.settings.title != '' -%}
+          <div class="footer-title">
+            <h3>{{ block.settings.title }}</h3>
+          </div>
+          {%- endif -%}
+          <div class="footer-widget mb-40">
+           
+            <div class="subscribe-style mt-45">
+              {%- if block.settings.content != '' -%}
+              <p>{{ block.settings.content }}</p>
+              {%- endif -%}
+               {%- if block.settings.newsletter_form_show -%}
+              <div id="mc_embed_signup" class="subscribe-form mt-20">
+                {%- include 'newsletter-form' -%}
+              </div>
+              {%- endif -%}
+              {%- if block.settings.logo -%}
+              <a href="/">
+                <img src="{{ block.settings.logo | img_url: 'medium' }}
+                https://via.placeholder.com/192x21" alt="">
+              </a>
+              {%- endif -%}
+                
+            </div>
+          </div>
+          
+          {%- if block.settings.newsletter_social_show -%}
+          <div class="footer-social top_bar_social text-center">
+            {% if block.settings.social1 != '' %}
+            <a href="{{ block.settings.social1_url }}"><i class="sli sli-social-{{ block.settings.social1 }}"></i></a>
+            {% endif %}
+
+            {% if block.settings.social2 != '' %}
+            <a href="{{ block.settings.social2_url }}"><i class="sli sli-social-{{ block.settings.social2 }}"></i></a>
+            {% endif %}
+
+            {% if block.settings.social3 != '' %}
+            <a href="{{ block.settings.social3_url }}"><i class="sli sli-social-{{ block.settings.social3 }}"></i></a>
+            {% endif %}
+
+            {% if block.settings.social4 != '' %}
+            <a href="{{ block.settings.social4_url }}"><i class="sli sli-social-{{ block.settings.social4 }}"></i></a>
+            {% endif %}
+
+            {% if block.settings.social5 != '' %}
+            <a href="{{ block.settings.social5_url }}"><i class="sli sli-social-{{ block.settings.social5 }}"></i></a>
+            {% endif %}
+          </div>
+          {%- endif -%} 
+          
+        </div>
 
         {%- when 'ft_menu' -%}
         <div class="col-lg-{{ block.settings.widget_col }} col-md-{{ block.settings.widget_col_md }} col-sm-6 col-6">
@@ -246,7 +298,14 @@
   {{ footer_heading_font | font_face }}
   {{ footer_font_drop_mega | font_face }}
 
-
+  {%- for block in section.blocks -%}{%- case block.type -%}
+    {%- when 'newsletter' -%}
+    .subscribe-style .subscribe-form .mc-form .clear:hover {
+      background-color: {{ block.settings.subscribe_btnhover_bg_Color }};
+    }
+    {%- endcase -%}
+  {%- endfor -%}
+  
   .theme_footer_top .footer-widget .footer-title h3 {
     font-family: {{ footer_heading_font.family }}, {{ footer_heading_font.fallback_families }};
     font-style: {{ footer_heading_font.style }};
@@ -873,6 +932,100 @@
 				}
           ]
        },
+       {
+			"type": "newsletter",
+			"name": "Newsletter Subscribe",
+			"settings": [
+      {
+					"type": "text",
+					"id": "title",
+					"label": "Title",
+					"default": "Information"
+				},          
+                 {
+
+                    "type": "select",
+                    "id": "widget_col",
+                    "label": "Select Column",
+                    "options": [
+                        {
+                            "label": "2",
+                            "value": "2"
+                        },
+                        {
+                            "label": "3",
+                            "value": "3"
+                        },
+                        {
+                            "label": "4",
+                            "value": "4"
+                        },
+                        {
+                            "label": "5",
+                            "value": "5"
+                        },
+                        {
+                            "label": "6",
+                            "value": "6"
+                        },
+                        {
+                            "label": "7",
+                            "value": "7"
+                        },
+                        {
+                            "label": "8",
+                            "value": "8"
+                        },
+                        {
+                            "label": "9",
+                            "value": "9"
+                        },
+                        {
+                            "label": "10",
+                            "value": "10"
+                        },
+                        {
+                            "label": "11",
+                            "value": "11"
+                        },
+                        {
+                            "label": "12",
+                            "value": "12"
+                        }
+                    ],
+                    "default": "8"
+                },
+				{
+					"type": "textarea",
+					"id": "content",
+					"label": "Content",
+					"default": "Subscribe to our newsleter, Enter your emil address"
+				},
+                {
+                    "type": "checkbox",
+                    "id": "newsletter_form_show",
+                    "label": "Newsletter Form Show",
+                    "default": true
+                },
+                {
+                    "type": "checkbox",
+                    "id": "newsletter_social_show",
+                    "label": "Newsletter Social Show",
+                    "default": true
+                },
+				{
+					"type": "color",
+					"id": "subscribe_btnhover_bg_Color",
+					"label": "Button Hover BG Color",
+					"default": "#ff3535"
+				},
+        {
+					"type": "image_picker",
+					"id": "logo",
+					"label": "Image"
+				}
+			]		
+		},
 	   {
           "type": "ft_instagram",
           "name": "Footer Instgram",

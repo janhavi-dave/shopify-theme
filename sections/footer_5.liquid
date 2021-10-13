@@ -41,17 +41,17 @@
             {%- if bset.service_img -%}
             <img src="{{ bset.service_img | img_url: 'small' }}" alt="{{ image.alt }}">
             {%- else -%}
-            <img src="https://via.placeholder.com/100x100" alt="{{ image.alt }}">
+            <img src="https://via.placeholder.com/70x70" alt="{{ image.alt }}">
             {%- endif -%}
           </div>
           {%- endif -%}
           <div class="feature-content">
             {%- if bset.title != '' -%}
-            <h4 style="color: {{ sset.ft_title_color }}">{{ bset.title }}</h4>
+            <h4 style="color:#fff">{{ bset.title }}</h4>
             {%- endif -%}
 
             {%- if bset.content != '' -%}
-            <p style="color: {{ sset.ft_content_color }}">{{ bset.content }}</p>
+            <p style="color:#fff">{{ bset.content }}</p>
             {%- endif -%}
           </div>
         </div>
@@ -253,6 +253,10 @@
 {%- if section.settings.custom_footer_style -%}
 
 <style>
+
+/* #section-{{ section.id }} .single-feature .feature-content h4::before {
+    background-color: {{ sset.ft_title_color }};
+} */
   .footer-widget .footer-title h3 {
     color: {{ section.settings.ft_title_color }};
   }

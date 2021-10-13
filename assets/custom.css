@@ -9,12 +9,22 @@ ul.phone_email_setting > li > a{
     font-size: 14px;
     line-height: 36px;
 }
-.notification-entry > ul.phone_email_setting > li::before {
-    position: absolute;
-    content: "";
-    width: 2px;
-    height: 20px;
-    background: #fc7c7c;
+/* .notification-entry > ul.phone_email_setting > li::before {
+    /* position: absolute; */
+    /* content: "|"; */
+    /* width: 2px;
+    height: 20px; */
+    /* color: wheat; */
+    /* background: #fc7c7c; */
+    /* right: 0;
+    top: 50%;
+    -webkit-transform: translatey(-50%);
+    transform: translatey(-50%); */
+/* }  */
+.notification-entry > ul.phone_email_setting >li:not(:last-child):after {
+    content:' |';
+    color: #fc7c7c;
+    position:absolute;
     right: 0;
     top: 50%;
     -webkit-transform: translatey(-50%);
@@ -25,9 +35,3 @@ ul.phone_email_setting > li > a{
     margin-right: 20px;
     padding-right: 21px;
 }
-.notification-entry>ul.phone_email_setting>li:last-child {
-    margin-right: 0;
-    padding-right: 0;
-    content: none;
-} 
-

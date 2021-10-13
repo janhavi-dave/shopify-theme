@@ -36,15 +36,21 @@
               {%- when 'single_brand' -%}
               <div class="single-brand-logo">
 			  <a href="{{ collections[block.settings.tab_product_handle] }}"><img src="{% if block.settings.tab_product_handle %}{{ block.settings.tab_product_handle | img_url: 'compact' }}
-                  {% else %}https://via.placeholder.com/550x340
+				
+                  {% else %}https://via.placeholder.com/550x340"
                   {% endif %}" alt="">
-				 <div>{{ collection.all_products_count }}</div> 
+				  {% for collection in collections %}
+				  {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
+					   <h2>{{ collection_title }}</h2>
+					   <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection_title }}">{{ section.settings.more_title }} {{ collection_title }} &rsaquo;</a>
+					   <p>{{ collection.all_products_count }}</p>
+					   {% endfor %}
+	
                 </a>
               </div>
 
               {%- endcase -%}
               {% endfor %}
-			  
 
             <!--=======  End of single brand logo  =======-->
           </div>

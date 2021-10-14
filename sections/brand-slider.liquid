@@ -39,9 +39,9 @@
 				  <img src="{% if block.settings.tab_product_handle %}{{ block.settings.tab_product_handle | img_url: 'compact' }}
                   {% else %}https://via.placeholder.com/550x340"
                   {% endif %}" alt="">
-				  {% if collections.title !=blank %}
+				  <!-- {% if collections.title !=blank %}
 				  	{{collection.title}}
-				  {% endif %}  
+				  {% endif %}   -->
 				  {% for collection in collections %}
 				  <a href="{{ collection.url }}">{{ collection.title }}{{ collection.all_products_count }}</a>
 				  {% endfor %}

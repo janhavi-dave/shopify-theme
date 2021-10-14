@@ -41,7 +41,10 @@
                   {% endif %}" alt="">
 				  {% if collections.title !=blank %}
 				  	{{collection.title}}
-				  {% endif %}
+				  {% endif %}  
+				  {% for collection in collections %}
+				  <a href="{{ collection.url }}">{{ collection.title }}{{ collection.all_products_count }}</a>
+				  {% endfor %}
 				  <!-- {% for collection in collections %}
 			
 					   <!-- <h2>{{ collection_title }}</h2> -->

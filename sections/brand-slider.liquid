@@ -39,24 +39,15 @@
 				  <img src="{% if block.settings.tab_product_handle %}{{ block.settings.tab_product_handle | img_url: 'compact' }}
                   {% else %}https://via.placeholder.com/550x340"
                   {% endif %}" alt="">
-				  <!-- {% if collections.title !=blank %}
-				  	{{collection.title}}
-				  {% endif %}   -->
+				  {% if collections %}
+				  {{ collections.title }}
+				{% endif %}
 				  {% for collection in collections %}
-				  <a href="{{ collection.url }}">{{ collection.title }}{{ collection.all_products_count }}</a>
+				  {% if collection %}
+					{{ collection.title }}
+				  {% endif %}
+				  <!-- <a href="{{ collection.url }}">{{ collection.title }}{{ collection.all_products_count }}</a> -->
 				  {% endfor %}
-				  <!-- {% for collection in collections %}
-			
-					   <!-- <h2>{{ collection_title }}</h2> -->
-					   <!-- <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection_title }}">{{ section.settings.more_title }} {{ collection_title }}</a> -->
-					   <!-- <a href="{{ collection.url }}">{{ collection.title }}{{ collection.all_products_count }}</a> -->
-					  
-					  <!-- {% if collection.handle == '' %} 
-					   <!-- {% endif %}
-					   {% endfor %}
-					   {%- for tag in product.tags -%}
-   						<a href="/collections/all/{{ tag | handle }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
-   						{%- endfor -%} -->
 						   
 				</a>
 				 

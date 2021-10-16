@@ -35,18 +35,17 @@
               {%- case block.type -%}
               {%- when 'single_brand' -%}
               <div class="single-brand-logo">
-			   <a href="{{ collections.url }}"{{ collections[block.settings.tab_product_handle] }}>
+			   <a href="{{ collections['the-handle'].url }}"{{ collections[block.settings.tab_product_handle] }}>
 				  <img src="{% if block.settings.tab_product_handle %}{{ block.settings.tab_product_handle | img_url: 'compact' }}
                   {% else %}https://via.placeholder.com/550x340"
                   {% endif %}" alt="">
-				  {% if collections %}
-				  {{ collection.title }}
-				{% endif %}
 				  {% for collection in collections %}
-				  {% if collection %}
-					{{ collection.title }}
-				  {% endif %}
-				  <!-- <a href="{{ collection.url }}">{{ collection.title }}{{ collection.all_products_count }}</a> -->
+					{% if forloop.first  %}
+    
+					<a href="{{ collection.url }}">{{ collection.title }}{{ collection.all_products_count }}</a>
+   
+					{% endif %}
+					<p>hello</p>
 				  {% endfor %}
 						   
 				</a>

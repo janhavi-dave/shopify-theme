@@ -1,7 +1,8 @@
 <div class="blog-wrap mb-40 text-center">
   
   {% if section.settings.blog_image_enable %}
-  <div class="blog-img mb-25">
+  <div class="blog-img mb-25 single_blog wow fadeInUp ">
+
     {% if article.image %}
     <a href="{{ article.url }}">{{ article | img_url: '370x260' , crop: 'center' | img_tag: article.title }}</a>
     {% endif %}
@@ -12,6 +13,7 @@
      
     {% if section.settings.blog_title_enable %}
     <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
+    
     {% endif %}
     
     <div class="blog-meta blog-mrg-border">

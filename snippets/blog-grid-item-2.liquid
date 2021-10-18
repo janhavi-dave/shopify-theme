@@ -13,6 +13,7 @@
       <ul>
         
         {% if section.settings.blog_date_enable %}
+
         <li><a href="#" class="remove_href">{{ article.published_at | date: '%d %B, %Y' }}</a></li>
         {%- endif -%}
 
@@ -27,6 +28,7 @@
     
     {% if section.settings.blog_title_enable %}
     <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
+    <h3>{{ article.content}}</h3>
     {%- endif -%}
     
     {% if section.settings.blog_button_enable %}

@@ -56,3 +56,13 @@
     padding-right: 55px;
     border-right: 1px solid #425788;
 }
+.footer_list_width_left{
+    margin-left: -20px;
+    padding-left: 20px;
+    border-left: 1px solid #425788;
+}
+.main_footer {
+    border-top: 1px solid #425788;
+    border-bottom: 1px solid #425788;
+    padding: 60px 0;
+}

@@ -5,7 +5,7 @@
     <div class="footer-top-2 pb-20 footer_style_5">
       <div class="row">
         {%- for block in section.blocks -%}{%- case block.type -%}
-        
+      <div class="main_footer">
       {%- when 'service' -%}
       {%- assign bset = block.settings -%}
       <div class="col-lg-{{ sset.service_col }} col-md-4">
@@ -122,7 +122,7 @@
             <h3>{{ block.settings.title }}</h3>
           </div>
           {%- endif -%}
-          <div class="footer-widget mb-40 ">
+          <div class="footer-widget mb-40 footer_list_width_left">
            
             <div class="subscribe-style mt-45">
               {%- if block.settings.content != '' -%}
@@ -171,7 +171,7 @@
 
         {%- when 'ft_menu' -%}
         <div class="col-lg-{{ block.settings.widget_col }} col-md-{{ block.settings.widget_col_md }} col-sm-6 col-6">
-          <div class="footer-widget mb-40 footer_list_width">
+          <div class="footer-widget mb-40 ">
             {%- if block.settings.title != '' -%}
             <div class="footer-title">
               <h3>{{ block.settings.title }}</h3>
@@ -244,7 +244,7 @@
         {%- endfor -%}
       </div>
     </div>
-
+  </div>
   </div>
 </div>
 

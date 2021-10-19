@@ -35,16 +35,32 @@
               {%- case block.type -%}
               {%- when 'single_brand' -%}
               <div class="single-brand-logo">
+				{%- assign collection = collections[section.settings.collection] -%}
 			   <a href="{{ collections['the-handle'].url }}"{{ collections[block.settings.tab_product_handle] }}>
 				  <img src="{% if block.settings.tab_product_handle %}{{ block.settings.tab_product_handle | img_url: 'compact' }}
                   {% else %}https://via.placeholder.com/550x340"
                   {% endif %}" alt="">
-				  {% for collection in collections %}
-					<a href="{{ collection.url }}">{{ collection.title }}{{ collection.all_products_count }}</a>
-				  {% endfor %}
+				  {% if collection.empty? %}
+				  {{ 'homepage.onboarding.collection_title' | t }} {{'collections.general.items_with_count' | t:  count: collection.products_count }}
+				{% else %}
+				  {{ collection.title }}
+				{% endif %}
+				  <!-- <p>{{section.settings.collection_tle}}</p> -->
+				  <!-- {% for collection in collections %}
+				  {% if collection.title == blank %}
+				  {{ collection.title }}
+					{% else %}
+					 
+					  <a href="{{ collection.url }}">{{ collection.title }}{{ collection.all_products_count }}</a>
+					{% endif %}
+				  {% endfor %} -->
 						   
 				</a>
-				 
+				<!-- {%- if block.settings.title != '' -%}
+				<div class="footer-title">
+				  <h3>{{ block.settings.title }}</h3>
+				</div>
+				{%- endif -%} -->
 
                 
               </div>
@@ -356,7 +372,13 @@
 				"type": "collection",
                   "id": "tab_product_handle",
                   "label": "collection"
-              }
+              },
+			  {
+				"type": "text",
+				"id": "title",
+				"label": "Title",
+				"default": "Collection"
+			}
 
 
           ]

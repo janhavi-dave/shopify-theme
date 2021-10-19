@@ -24,4 +24,12 @@
     "url": "https://github.com/janhavi-dave/shopify-theme/issues"
   },
   "homepage": "https://github.com/janhavi-dave/shopify-theme#readme"
+},
+{
+  "dependencies": {
+    "react-dom": "latest",
+    "react": "latest",
+    "@shopify/polaris-icons": "latest",
+    "@shopify/polaris": "latest"
+  }
 }

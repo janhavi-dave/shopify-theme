@@ -2,10 +2,10 @@
 <div class="theme_footer_top" id="section-{{ section.id }}">
   <div class="{% if section.settings.section_width == 'full_width' %}container-fluid {% elsif section.settings.section_width == 'box_width' %}container-fluid section-padding-1{% elsif section.settings.section_width == 'default' %}container default {% endif %}">
    
-    <div class="footer-top-2 pb-20 footer_style_5">
+    <div class="footer-top-2 pb-20 footer_style_5 ">
       <div class="row">
         {%- for block in section.blocks -%}{%- case block.type -%}
-      <div class="main_footer">
+      
       {%- when 'service' -%}
       {%- assign bset = block.settings -%}
       <div class="col-lg-{{ sset.service_col }} col-md-4">
@@ -54,7 +54,7 @@
             <p style="color:#fff">{{ bset.content }}</p>
             {%- endif -%}
           </div>
-        </div>
+  
         
         {% endif %}
         
@@ -68,7 +68,7 @@
             
       {% endfor %}
         {% when 'about_info' %}
-        <div class="col-lg-{{ block.settings.widget_col }} col-md-{{ block.settings.widget_col_md }} col-sm-12 col-12">
+        <div class="col-lg-{{ block.settings.widget_col }} col-md-{{ block.settings.widget_col_md }} col-sm-12 col-12  ">
           <div class="footer-widget mb-40 footer_list_width">
             {%- if block.settings.logo -%}
             <a href="/">
@@ -117,12 +117,13 @@
         </div>
         {%- when 'newsletter' -%}
         <div class="col-lg-{{ block.settings.widget_col }} col-md-{{ block.settings.widget_col }} col-sm-12 col-12 custom_class_2">
+          <div class="footer-widget mb-40 footer_list_width_left">
           {%- if block.settings.title != '' -%}
           <div class="footer-title">
             <h3>{{ block.settings.title }}</h3>
           </div>
           {%- endif -%}
-          <div class="footer-widget mb-40 footer_list_width_left">
+          
            
             <div class="subscribe-style mt-45">
               {%- if block.settings.content != '' -%}
@@ -944,7 +945,7 @@
 					"type": "text",
 					"id": "title",
 					"label": "Title",
-					"default": "Information"
+					"default": "Newsletter"
 				},          
                  {
 
@@ -1009,12 +1010,6 @@
                     "type": "checkbox",
                     "id": "newsletter_form_show",
                     "label": "Newsletter Form Show",
-                    "default": true
-                },
-                {
-                    "type": "checkbox",
-                    "id": "newsletter_social_show",
-                    "label": "Newsletter Social Show",
                     "default": true
                 },
 				{

@@ -50,9 +50,9 @@
 				{% endfor %} -->
 				  <!-- <p>{{section.settings.collection_tle}}</p> -->
 				  {% for collection in collections %}
-				  {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %} 
 					  <a href="{{ collection.url }}">{{ collection.title }}{{ collection.all_products_count }}</a>
 				  {% endfor %}
+				  
 				  <!-- {% capture url %}/collections/{{ collection.handle }}{% endcapture %} 
 				  {{ collections.title | link_to: url }} -->
 				</a>
